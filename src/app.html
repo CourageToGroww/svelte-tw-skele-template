@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Post reQuest</title>
+		%sveltekit.head%
+	</head>
+	<body data-theme="skeleton" style="background: #000000">
+		<div>%sveltekit.body%</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+		<script>
+			var tl = gsap.timeline({ repeat: 10000, yoyo: true });
+
+			tl.to('body', { background: '#0078D7', duration: 60, ease: 'power1.inOut' }); // Azure blue color
+			tl.to('body', { background: '#DB4437', duration: 15, ease: 'power1.inOut' }) // Google cloud red color
+				.to('body', { background: '#F4B400', duration: 15, ease: 'back.out(5)' }) // Google cloud yellow color
+				.to('body', { background: '#0F9D58', duration: 15, ease: 'back.out(5)' }) // Google cloud green color
+				.to('body', { background: '#4285F4', duration: 15, ease: 'power1.inOut' }); // Google cloud blue color
+			tl.to('body', { background: '#FF9900', duration: 60, ease: 'power1.inOut' }); // AWS orange color
+		</script>
+	</body>
+</html>
